@@ -1,6 +1,6 @@
 # @cybozu/renovate-config
 
-[![npm version](https://badge.fury.io/js/%cybozu%2Frenovate-config.svg)](https://badge.fury.io/js/%40cybozu%2Frenovate-config)
+[![npm version](https://badge.fury.io/js/%40cybozu%2Frenovate-config.svg)](https://badge.fury.io/js/%40cybozu%2Frenovate-config)
 
 A sharable Renovate config for Cybozu.
 
