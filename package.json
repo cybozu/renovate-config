@@ -1,0 +1,26 @@
+{
+  "name": "@cybozu/renovate-config",
+  "repository": "cybozu/renovate-config",
+  "homepage": "https://github.com/cybozu/renovate-config",
+  "bugs": "https://github.com/cybozu/renovate-config/issues",
+  "version": "1.0.0",
+  "description": "A shareable Renovate config for Cybozu",
+  "files": [
+  ],
+  "keywords": [
+    "renovate"
+  ],
+  "author": "cybozu",
+  "license": "MIT",
+  "renovate-config": {
+    "default": {
+      "extends": [
+        "@teppeis",
+        ":widenPeerDependencies"
+      ],
+      "circleci": {
+        "schedule": ["before 9am on Monday"]
+      }
+    }
+  }
+}
