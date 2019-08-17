@@ -5,22 +5,127 @@
   "bugs": "https://github.com/cybozu/renovate-config/issues",
   "version": "1.0.0",
   "description": "A shareable Renovate config for Cybozu",
-  "files": [
-  ],
+  "files": [],
   "keywords": [
     "renovate"
   ],
+  "scripts": {
+    "test": "renovate-config-validator"
+  },
+  "devDependencies": {
+    "renovate": "^19.30.7"
+  },
   "author": "cybozu",
   "license": "MIT",
   "renovate-config": {
     "default": {
       "extends": [
-        "@teppeis",
+        ":ignoreModulesAndTests",
+        ":label(renovate)",
+        ":prConcurrentLimit10",
+        ":prNotPending",
+        ":timezone(Asia/Tokyo)",
+        "group:monorepos",
         ":widenPeerDependencies"
       ],
+      "npm": {
+        "extends": [
+          ":automergePatch",
+          ":noUnscheduledUpdates",
+          ":separatePatchReleases",
+          ":unpublishSafe",
+          "helpers:disableTypesNodeMajor",
+          "@cybozu:semanticPrefixFixDepsPeerChoreOthers"
+        ],
+        "schedule": [
+          "after 9pm",
+          "before 9am"
+        ],
+        "rangeStrategy": "bump",
+        "postUpdateOptions": [
+          "npmDedupe"
+        ],
+        "lockFileMaintenance": {
+          "enabled": true,
+          "schedule": [
+            "before 3am on the first day of the month"
+          ]
+        },
+        "packageRules": [
+          {
+            "groupName": "ESLint and Prettier",
+            "packageNames": [
+              "eslint",
+              "prettier"
+            ],
+            "packagePatterns": [
+              "^eslint-config-",
+              "^eslint-plugin-"
+            ]
+          },
+          {
+            "description": "automerge minor updates of widely used libraries in devDeps",
+            "updateTypes": [
+              "minor"
+            ],
+            "depTypeList": [
+              "devDependencies"
+            ],
+            "automerge": true,
+            "packageNames": [
+              "glob",
+              "mocha",
+              "npm-run-all",
+              "power-assert",
+              "rimraf",
+              "sinon"
+            ]
+          },
+          {
+            "description": "disable package.json > engines update",
+            "depTypeList": [
+              "engines"
+            ],
+            "enabled": false
+          }
+        ]
+      },
       "circleci": {
-        "schedule": ["before 9am on Monday"]
+        "enabled": true,
+        "automerge": true,
+        "automergeType": "branch",
+        "schedule": [
+          "before 9am on Friday"
+        ],
+        "semanticCommitScope": "docker",
+        "semanticCommitType": "ci",
+        "packageRules": [
+          {
+            "groupName": "Node Docker digests in CircleCI",
+            "packageNames": [
+              "circleci/node",
+              "node"
+            ]
+          }
+        ]
       }
+    },
+    "semanticPrefixFixDepsPeerChoreOthers": {
+      "packageRules": [
+        {
+          "packagePatterns": [
+            "*"
+          ],
+          "semanticCommitType": "chore"
+        },
+        {
+          "depTypeList": [
+            "dependencies",
+            "peerDependencies"
+          ],
+          "semanticCommitType": "fix"
+        }
+      ]
     }
   }
 }
