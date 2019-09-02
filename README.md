@@ -14,11 +14,9 @@ A sharable Renovate config for Cybozu.
 }
 ```
 
-This config is based on [@teppeis/renovate-config](https://github.com/teppeis/renovate-config)
-`@cybozu/renovate-config` overrides the following settings.
+## Settings
 
-* Update Circle CI images at before 9 am on Monday
-* Always Update peerDeps wider
+See the settings in [package.json](https://github.com/cybozu/renovate-config/blob/master/package.json) and [Configuration Options](https://renovatebot.com/docs/configuration-options/) in Renovate Docs
 
 ## License
 
