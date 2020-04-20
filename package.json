@@ -46,7 +46,7 @@
           "npmDedupe"
         ],
         "lockFileMaintenance": {
-          "enabled": true,
+          "enabled": false,
           "schedule": [
             "before 3am on the first day of the month"
           ]
