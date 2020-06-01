@@ -45,12 +45,6 @@
         "postUpdateOptions": [
           "npmDedupe"
         ],
-        "lockFileMaintenance": {
-          "enabled": false,
-          "schedule": [
-            "before 3am on the first day of the month"
-          ]
-        },
         "packageRules": [
           {
             "groupName": "ESLint and Prettier",
