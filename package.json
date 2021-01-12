@@ -33,7 +33,7 @@
           ":automergePatch",
           ":noUnscheduledUpdates",
           ":separatePatchReleases",
-          ":unpublishSafe",
+          "npm:unpublishSafe",
           "helpers:disableTypesNodeMajor",
           "@cybozu:semanticPrefixFixDepsPeerChoreOthers"
         ],
