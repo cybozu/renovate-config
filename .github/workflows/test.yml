@@ -1,0 +1,26 @@
+
+name: test
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+
+jobs:
+  test:
+
+    name: Test Renovate config
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js v14.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14.x
+    - name: npm ci, and npm test
+      run: |
+        npm ci
+        npm test
+      env:
+        CI: true
