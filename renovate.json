@@ -5,7 +5,8 @@
     ":prConcurrentLimit10",
     ":timezone(Asia/Tokyo)",
     "group:monorepos",
-    ":widenPeerDependencies"
+    ":widenPeerDependencies",
+    ":prImmediately"
   ],
   "npm": {
     "extends": [
