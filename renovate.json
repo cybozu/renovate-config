@@ -6,7 +6,8 @@
     ":timezone(Asia/Tokyo)",
     "group:monorepos",
     ":widenPeerDependencies",
-    ":prImmediately"
+    ":prImmediately",
+    ":dependencyDashboard"
   ],
   "npm": {
     "extends": [
