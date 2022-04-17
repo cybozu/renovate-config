@@ -13,7 +13,7 @@
     "test": "renovate-config-validator"
   },
   "devDependencies": {
-    "renovate": "^32.20.2"
+    "renovate": "^32.25.0"
   },
   "author": "cybozu",
   "license": "MIT"
