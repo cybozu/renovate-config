@@ -27,13 +27,13 @@
     ],
     "packageRules": [
       {
-        "packagePatterns": [
+        "matchPackagePatterns": [
           "*"
         ],
         "semanticCommitType": "chore"
       },
       {
-        "depTypeList": [
+        "matchDepTypes": [
           "dependencies",
           "peerDependencies"
         ],
@@ -41,25 +41,25 @@
       },
       {
         "groupName": "ESLint and Prettier",
-        "packageNames": [
+        "matchPackageNames": [
           "eslint",
           "prettier"
         ],
-        "packagePatterns": [
+        "matchPackagePatterns": [
           "^eslint-config-",
           "^eslint-plugin-"
         ]
       },
       {
         "description": "automerge minor updates of widely used libraries in devDeps",
-        "updateTypes": [
+        "matchUpdateTypes": [
           "minor"
         ],
-        "depTypeList": [
+        "matchDepTypes": [
           "devDependencies"
         ],
         "automerge": true,
-        "packageNames": [
+        "matchPackageNames": [
           "glob",
           "mocha",
           "npm-run-all",
@@ -70,7 +70,7 @@
       },
       {
         "description": "disable package.json > engines update",
-        "depTypeList": [
+        "matchDepTypes": [
           "engines"
         ],
         "enabled": false
@@ -89,7 +89,7 @@
     "packageRules": [
       {
         "groupName": "Node Docker digests in CircleCI",
-        "packageNames": [
+        "matchPackageNames": [
           "circleci/node",
           "node"
         ]
