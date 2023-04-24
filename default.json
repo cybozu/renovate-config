@@ -95,5 +95,17 @@
         ]
       }
     ]
-  }
+  },
+  "packageRules": [
+    {
+      "matchDepTypes": [
+        "action"
+      ],
+      "excludePackagePrefixes": [
+        "actions/",
+        "cybozu/"
+      ],
+      "pinDigests": true
+    }
+  ]
 }
