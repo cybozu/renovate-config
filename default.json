@@ -21,6 +21,7 @@
       "after 9pm",
       "before 9am"
     ],
+    "minimumReleaseAge": "14 days",
     "rangeStrategy": "bump",
     "postUpdateOptions": [
       "npmDedupe"
